@@ -8,17 +8,17 @@ public class Member {
     public void setMemberInfo(){
         Scanner scn = new Scanner(System.in);
 
-        System.out.print("이름을 입력하세요");
+        System.out.print("input your name ");
         this.name = scn.nextLine();
-        System.out.print("아이디를 입력하세요");
+        System.out.print("Input your ID");
         this.id = scn.nextLine();
-        System.out.print("비밀번호를 입력하세요");
+        System.out.print("Input your pw");
         this.pass = scn.nextLine();
-        System.out.print("핸드폰번호 입력하세요");
+        System.out.print("Input your phone");
         this.phone = scn.nextLine();
     }
     public void putMemberInfo(){
-        System.out.println("name :" + name +" ID :" + id+" 비밀번호 :" + pass+" 핸드폰 :" + phone);
+        System.out.println("name :" + name +" ID :" + id+" pw :" + pass+" phone :" + phone);
     }
 
     public String getMemberName() {
