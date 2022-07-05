@@ -43,5 +43,11 @@ public class customerInfo {
         System.out.println(" cash : "+this.cash);
     }
 
+    public boolean contains(String o){
+        if(o.equals(name)||o.equals(account)){
+            return true;
+        }else return false;
+    }
+
 
 }
