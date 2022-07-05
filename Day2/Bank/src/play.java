@@ -30,7 +30,7 @@ b= new customerInfo();
         Scanner input = new Scanner(System.in);
         String info = input.nextLine();
         for(idx=0; idx < m.size(); idx++){
-            if(m.get(idx).contains(info)){ //if문에서 객체에 값을 추가하는 형태로 해야하는지?
+            if(m.get(idx).contains(info)){
                 System.out.println("success"); break;
             }else System.out.println("fail"); break;
         }
