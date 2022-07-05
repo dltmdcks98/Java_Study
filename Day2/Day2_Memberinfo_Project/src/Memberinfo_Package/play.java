@@ -63,7 +63,7 @@ List의 가장 큰 특징은 객체를 새로만들 때마다 새로 추가할 �
         Member m1 = new Member();
         ArrayList<Member> m = new ArrayList<>();//제네릭스 : <> => 어떤 타입의 배열인지 명시
         m.add(m1);
-        m.get(0).setMemberInfo();//첫번째외원을 정보를 저장할 수 있다. -> 메소드 체이닝 : 메소드를 연속적으로 사용하는 것
+        m.get(0).setMemberInfo();//첫번째회원을 정보를 저장할 수 있다. -> 메소드 체이닝 : 메소드를 연속적으로 사용하는 것
         m.get(0).putMemberInfo();//회원 정보 출력
 
 
