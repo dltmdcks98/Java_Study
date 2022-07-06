@@ -46,6 +46,12 @@ public class play {
                         break;
                     }
                 }
+            case 2 :
+                m.get(0).outCash();
+                break;
+            case 3 :
+                m.get(0).putCash();
+                break;
             case 4:
                 System.out.println("input search name or account");
                 Scanner input = new Scanner(System.in);
@@ -63,7 +69,7 @@ public class play {
                 for(int idx = 0; idx< m.size(); idx++){
                     System.out.println(m.get(idx));
                 }
-
+                break;
             case 6:
                 try {
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();

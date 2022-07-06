@@ -33,15 +33,7 @@ public class customerInfo {
             System.out.println(this.cash);
         }
     }
-    public int cash(){
-        return this.cash;
-    }
 
-    public void outCustomerinfo(){
-        System.out.print("name : "+this.name);
-        System.out.print(" account : "+this.account);
-        System.out.println(" cash : "+this.cash);
-    }
 
     public boolean contains(String o){
         if(o.equals(name)||o.equals(account)){
