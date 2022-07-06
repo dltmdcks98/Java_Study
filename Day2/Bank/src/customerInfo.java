@@ -2,8 +2,8 @@ import javax.naming.event.ObjectChangeListener;
 import java.util.Scanner;
 
 public class customerInfo {
-    String name, account;
-    int cash;
+    static String name, account;
+    static int cash;
 
     public customerInfo(String name, String account, int cash) {
         this.name = name;
@@ -11,7 +11,7 @@ public class customerInfo {
         this.cash = cash;
     }
 
-    public void putCash(){
+    public  void putCash(){
         int Icash;
         Scanner putcash = new Scanner(System.in);
         Icash = putcash.nextInt();
@@ -22,7 +22,7 @@ public class customerInfo {
             System.out.println(this.cash);
         }
     }
-    public void outCash(){
+    public  void outCash(){
         int Ocash;
         Scanner outcash = new Scanner(System.in);
         Ocash = outcash.nextInt();
@@ -37,7 +37,7 @@ public class customerInfo {
         return this.cash;
     }
 
-    public void putCustomerinfo(){
+    public void outCustomerinfo(){
         System.out.print("name : "+this.name);
         System.out.print(" account : "+this.account);
         System.out.println(" cash : "+this.cash);
@@ -56,4 +56,27 @@ public class customerInfo {
         }else  return false;
     }
 
+    public static String getName() {
+        return name;
+    }
+
+    public static void setName(String name) {
+        customerInfo.name = name;
+    }
+
+    public static String getAccount() {
+        return account;
+    }
+
+    public static void setAccount(String account) {
+        customerInfo.account = account;
+    }
+
+    public static int getCash() {
+        return cash;
+    }
+
+    public static void setCash(int cash) {
+        customerInfo.cash = cash;
+    }
 }
