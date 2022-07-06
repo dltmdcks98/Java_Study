@@ -49,5 +49,11 @@ public class customerInfo {
         }else return false;
     }
 
+    public boolean range(int upper,int under){
+        if(upper < cash && cash<under){
+            System.out.println("Success");
+            return true;
+        }else  return false;
+    }
 
 }
