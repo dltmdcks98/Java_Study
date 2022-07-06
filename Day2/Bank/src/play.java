@@ -46,7 +46,6 @@ public class play {
                         break;
                     }
                 }
-                break;
             case 4:
                 System.out.println("input search name or account");
                 Scanner input = new Scanner(System.in);
@@ -68,6 +67,7 @@ public class play {
             case 6:
                 try {
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                    break;
                 }catch (IOException | InterruptedException e){
                     e.printStackTrace();
                 }
