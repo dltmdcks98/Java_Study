@@ -14,6 +14,7 @@ b= new customerInfo();
  */
         while(true){
             try{
+                System.out.println("정보를 입력하세요");
                 Scanner scn = new Scanner(System.in);
                 String name = scn.nextLine();
                 if(name.equals("exit")) throw new Exception();
