@@ -28,7 +28,7 @@ public class play {
             System.out.println("5. view all 0info");
             System.out.println("6. clear");
             System.out.println("7. exit");
-            System.out.println("===================================================");
+            System.out.println("==================================================");
 
             Scanner inputMenu = new Scanner(System.in);
             menu = inputMenu.nextInt();
