@@ -11,10 +11,7 @@ public class customerInfo {
         this.cash = cash;
     }
 
-    public  void putCash(){
-        int Icash;
-        Scanner putcash = new Scanner(System.in);
-        Icash = putcash.nextInt();
+    public  void putCash(int Icash){
         if(Icash<0){
             System.out.println("Input upper 0");
         }else {
@@ -22,10 +19,7 @@ public class customerInfo {
             System.out.println(this.cash);
         }
     }
-    public  void outCash(){
-        int Ocash;
-        Scanner outcash = new Scanner(System.in);
-        Ocash = outcash.nextInt();
+    public  void outCash(int Ocash){
         if(Ocash>this.cash){
             System.out.println("Input under cash");
         }else {
@@ -48,24 +42,24 @@ public class customerInfo {
         }else  return false;
     }
 
-    public static String getName() {
-        return name;
+    public  String getName() {
+        return this.name;
     }
 
     public static void setName(String name) {
         customerInfo.name = name;
     }
 
-    public static String getAccount() {
-        return account;
+    public  String getAccount() {
+        return this.account;
     }
 
     public static void setAccount(String account) {
         customerInfo.account = account;
     }
 
-    public static int getCash() {
-        return cash;
+    public  int getCash() {
+        return this.cash;
     }
 
     public static void setCash(int cash) {

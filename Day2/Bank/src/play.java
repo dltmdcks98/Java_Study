@@ -6,14 +6,15 @@ import java.util.Scanner;
 
 public class play {
     public static void main(String[] args) {
-        ArrayList<customerInfo> m = new ArrayList<>();
-        customerInfo c = null;
+        ArrayList<customerInfo> m = new ArrayList<customerInfo>();
+        customerInfo c, c1, c2 ;
         int menu = 0;
-        String[] cls = new String[]{"cmd.exe", "/c", "cls"};
 
 
 
 
+//sample data
+        m.add(new customerInfo("aa","123123",5000));m.add(new customerInfo("bb","123444",5000));
 
 
         while (true) {
@@ -33,6 +34,7 @@ public class play {
             menu = inputMenu.nextInt();
             switch (menu) {
                 case 1:
+                    //사용자를 계속 넣을 수 있는 코드
                     while (true) {
                         try {
                             System.out.println("If you want exit input 'exit' in name space");
@@ -50,12 +52,38 @@ public class play {
                             System.out.println("stop add info");
                             break;
                         }
+                        break;
                     }
+                break;
                 case 2:
-//                    m.get(0).outCash();
+                    System.out.println("Enter account");
+                    Scanner inaccout = new Scanner(System.in);
+                    for (int idx = 0; idx < m.size(); idx++) {
+                        if (m.get(idx).contains(String.valueOf(inaccout.nextInt()))) {
+                            System.out.println("Enter Withdrawal");
+                            Scanner inpCash = new Scanner(System.in);
+                            m.get(idx).outCash(inpCash.nextInt());
+                            System.out.println("success");
+                            break;
+                        } else System.out.println("fail");
+                        break;
+
+                    }
                     break;
                 case 3:
-//                    m.get(0).putCash();
+                    System.out.println("Enter account");
+                    Scanner ouAccout = new Scanner(System.in);
+                    for (int idx = 0; idx < m.size(); idx++) {
+                        if (m.get(idx).contains(String.valueOf(ouAccout.nextInt()))) {
+                            System.out.println("Enter Deposit");
+                            Scanner inpCash = new Scanner(System.in);
+                            m.get(idx).putCash(inpCash.nextInt());
+                            System.out.println("success");
+                            break;
+                        } else System.out.println("fail");
+                        break;
+
+                    }
                     break;
                 case 4:
                     System.out.println("input search name or account");
@@ -72,7 +100,7 @@ public class play {
                     }
                 case 5:
                     for (int idx = 0; idx < m.size(); idx++) {
-                        System.out.println(m.get(idx));
+                        System.out.println("name : "+m.get(idx).getName()+" accout : "+m.get(idx).getAccount()+" money : "+m.get(idx).getCash());
                     }
                     break;
                 case 6:
