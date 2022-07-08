@@ -58,9 +58,6 @@ public class Product implements Serializable{
         this.expired = expired;
     }
 
-
-
-    @Override
     public String toString() {
         return "Product{" +
                 "serial_no=" + serial_no +
