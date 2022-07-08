@@ -1,9 +1,10 @@
 import javax.naming.event.ObjectChangeListener;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class customerInfo {
-    static String name, account;
-    static int cash;
+public class customerInfo implements Serializable {
+     String name, account;
+     int cash;
 
     public customerInfo(String name, String account, int cash) {
         this.name = name;
@@ -42,27 +43,27 @@ public class customerInfo {
         }else  return false;
     }
 
-    public  String getName() {
-        return this.name;
-    }
-
-    public static void setName(String name) {
-        customerInfo.name = name;
-    }
-
-    public  String getAccount() {
-        return this.account;
-    }
-
-    public static void setAccount(String account) {
-        customerInfo.account = account;
-    }
-
-    public  int getCash() {
-        return this.cash;
-    }
-
-    public static void setCash(int cash) {
-        customerInfo.cash = cash;
-    }
+//    public  String getName() {
+//        return this.name;
+//    }
+//
+//    public static void setName(String name) {
+//        customerInfo.name = name;
+//    }
+//
+//    public  String getAccount() {
+//        return this.account;
+//    }
+//
+//    public static void setAccount(String account) {
+//        customerInfo.account = account;
+//    }
+//
+//    public  int getCash() {
+//        return this.cash;
+//    }
+//
+//    public static void setCash(int cash) {
+//        customerInfo.cash = cash;
+//    }
 }

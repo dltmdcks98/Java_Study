@@ -1,10 +1,7 @@
-package Convenience_Store_Package;
+package Convenience_Store_Package.Convenience_Store.src.Convenience_Store_Package;
 
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.io.Serializable;
-import java.util.Scanner;
 
 public class play {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -79,7 +76,8 @@ public class play {
         Product p = (Product) list.get(0);
         System.out.println(p.toString());
 
-        objectInputStream.close();
+        objectInputStream.close();//스트림들을 닫는다.
+
     }
 }
 
