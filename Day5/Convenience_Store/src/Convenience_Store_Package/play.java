@@ -76,7 +76,7 @@ public class play {
 
 
         System.out.println(list.size());
-        Product p = (Product) list.get(0);
+        Product p = (Product) list.get(1);
         System.out.println(p.toString());
 
         objectInputStream.close();
