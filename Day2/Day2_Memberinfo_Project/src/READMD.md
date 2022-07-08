@@ -13,7 +13,7 @@ getMemberName getMemberID getMemberPass getMemberPhone
 
 ========================================
 
-프로그램 코드동작 테스트(play)
+프로그램 코드동작 테스트()
 -Member클래스로 객체 생성
 -생성된 객체에 회원 정보저장
 -저장된 정보들을 각각확인함.(get계열의 메소드들을 이용해서 정보들을 반환받은 후 출력)
