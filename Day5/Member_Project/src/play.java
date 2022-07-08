@@ -24,7 +24,8 @@ public class play {
         while(true){
             switch (Integer.parseInt(input.nextLine())){
                 case 1 :
-                    member.Input();
+                    System.out.println("number of repetitions");
+                    member.Input(Integer.parseInt(input.nextLine()));
                     list.add(member);
                     fileInput(list);
                     break;
@@ -41,7 +42,7 @@ public class play {
         }
     }
     public static void fileInput(ArrayList<setInfo> m ) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream("D:\\temp\\Member.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("D:\\temp\\Member.txt",true);
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(bufferedOutputStream);
 

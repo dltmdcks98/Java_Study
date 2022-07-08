@@ -68,20 +68,21 @@ class setInfo extends Member{
         super(name, address, sex, age);
     }
 
-    public void Input(){
+    public void Input(int idx){
         Scanner input = new Scanner(System.in);
+        for(int i =0; i<idx; i++) {
+            System.out.println("your name : ");
+            super.setName(input.nextLine());
 
-        System.out.println("your name : ");
-        super.setName(input.nextLine());
+            System.out.println("your address : ");
+            super.setAddress(input.nextLine());
 
-        System.out.println("your address : ");
-        super.setAddress(input.nextLine());
+            System.out.println("Are you man? : ");
+            super.setSex(Boolean.parseBoolean(input.nextLine()));
 
-        System.out.println("Are you man? : ");
-        super.setSex(Boolean.parseBoolean(input.nextLine()));
-
-        System.out.println("Your Age? : ");
-        super.setAge(Integer.parseInt(input.nextLine()));
+            System.out.println("Your Age? : ");
+            super.setAge(Integer.parseInt(input.nextLine()));
+        }
     }
 
 }
