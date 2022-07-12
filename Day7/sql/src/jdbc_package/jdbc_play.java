@@ -26,18 +26,21 @@ public class jdbc_play {
             //jdbc는 프리페어드라라는 기능을 사용할 수 있음(Prepared)
             //이 기능은 SQL명령어에서 특정한 부분 (데이터가 들어가는)을 변수처리한다음, 나중에 처리하는 방식
             String str = "INSERT INTO jdbc_db(name,id,pass) VALUES (?,?,?)";
-            String del = "DELETE TABLE jdbc_db";
+            String del = "DELETE FROM jdbc_db";
+            String search = "SELECT name FROM jdbc_db WHERE name = 'LEE'";
             PreparedStatement p_stmt;
 
-            p_stmt = con.prepareStatement(str);
+            p_stmt = con.prepareStatement(search);
 
 
             p_stmt.setString(1,"LEE");
             p_stmt.setString(2,"admin");
             p_stmt.setString(3,"17171");
 
-            //서버로 SQL 명령어 전송
+//            서버로 SQL 명령어 전송, 저장
             p_stmt.execute();
+
+
 
             System.out.println("success");
         }catch (SQLException e){
