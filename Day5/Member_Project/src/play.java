@@ -25,8 +25,10 @@ public class play {
             switch (Integer.parseInt(input.nextLine())){
                 case 1 :
                     System.out.println("number of repetitions");
-                    member.Input(Integer.parseInt(input.nextLine()));
-                    list.add(member);
+                    for(int idx=0; idx<Integer.parseInt(input.nextLine());idx++) {
+                        member.Input();
+                        list.add(member);
+                    }
                     fileInput(list);
                     break;
                 case 2:
