@@ -1,10 +1,7 @@
 package MemberPackage;
 
 import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class MemberInfo_Class implements Serializable {
    String m_name, m_phone,m_id,m_pw;
@@ -88,6 +85,66 @@ public class MemberInfo_Class implements Serializable {
         }catch (SQLException e){
 
         }
+    }
 
+    void searchSQL(String input){
+        Connection con = null;
+        ResultSet rs =null;
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member_db","root","");
+
+            String str = "SELECT * FROM member_t WHERE m_name =?";
+            PreparedStatement p_stmt;
+            p_stmt = con.prepareStatement(str);
+
+            p_stmt.setString(1,input);
+
+            rs = p_stmt.executeQuery();
+            while(rs.next()){
+//                인덱스가 1부터 시작
+                System.out.println("name :"+rs.getString(1)+"\n"+
+                        "phone : "+rs.getString(2)+"\n"+
+                        "id : "+rs.getString(3)+"\n"+
+                        "pw : "+rs.getString(4)
+                );
+            }
+
+            System.out.println("success");
+        }catch (SQLException e){
+            System.err.println("con err");
+            e.printStackTrace();
+        }
+
+        try{
+            if(con != null){
+                con.close();
+            }
+        }catch (SQLException e){
+
+        }
+    }
+    void deleteSQL(String input){
+        Connection con =null;
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member_db","root","");
+            String str = "DELETE FROM member_t WHERE m_name = ?";
+            PreparedStatement p_stmt;
+            p_stmt = con.prepareStatement(str);
+            p_stmt.setString(1, input);
+            p_stmt.execute();
+
+            System.out.println("success");
+        }catch (SQLException e){
+            System.err.println("con err");
+            e.printStackTrace();
+        }
+
+        try{
+            if(con != null){
+                con.close();
+            }
+        }catch (SQLException e){
+
+        }
     }
 }

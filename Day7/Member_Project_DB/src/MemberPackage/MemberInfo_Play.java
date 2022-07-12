@@ -16,8 +16,8 @@ public class MemberInfo_Play {
         System.out.println("menu");
         System.out.println("===================================================");
         System.out.println("1. info input ");
-        System.out.println("2. Read MemberPackage.Member ");
-        System.out.println("3. Print MemberPackage.Member ");
+        System.out.println("2. search info ");
+        System.out.println("3. delete info ");
         System.out.println("==================================================");
 
         while(true){
@@ -38,8 +38,12 @@ public class MemberInfo_Play {
                     memberInfo.insertSQL();
                     break;
                 case 2:
+                    System.out.print("Enter Search name");
+                    memberInfo.searchSQL(input.nextLine());
                     break;
                 case 3 :
+                    System.out.print("Enter Delete name : ");
+                    memberInfo.deleteSQL(input.nextLine());
                     break;
                 default:
                     System.err.println("Error");
