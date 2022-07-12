@@ -1,21 +1,18 @@
 package MemberPackage;
 
 import java.io.*;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MemberInfo_Play {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        setInfo member = null;
-        ArrayList<setInfo> list = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
-        member = new setInfo("aaa","seoul",true,25);
-        list.add(member);
+      Scanner input = new Scanner(System.in);
+      MemberInfo_Class memberInfo = new MemberInfo_Class();
 
-//        fileInput(list);
-//        fileOutput();
 
-        //메뉴 구성"
+
+        //메뉴 구성
         System.out.println("menu");
         System.out.println("===================================================");
         System.out.println("1. info input ");
@@ -26,57 +23,28 @@ public class MemberInfo_Play {
         while(true){
             switch (Integer.parseInt(input.nextLine())){
                 case 1 :
-                    System.out.println("number of repetitions");
-                    for(int idx=0; idx<Integer.parseInt(input.nextLine());idx++) {
-                        member.Input();
-                        list.add(member);
-                    }
-                    fileInput(list);
+                    System.out.print("Enter name : ");
+                    memberInfo.setM_name(input.nextLine());
+
+                    System.out.print("Enter phone : ");
+                    memberInfo.setM_phone(input.nextLine());
+
+                    System.out.print("Enter id : ");
+                    memberInfo.setM_id(input.nextLine());
+
+                    System.out.print("Enter pw : ");
+                    memberInfo.setM_pw(input.nextLine());
+
+                    memberInfo.insertSQL();
                     break;
                 case 2:
-                    fileOutput();
                     break;
                 case 3 :
-                    filePrint();
                     break;
                 default:
                     System.err.println("Error");
                     continue;
             }
         }
-    }
-    public static void fileInput(ArrayList<setInfo> m ) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream("D:\\temp\\MemberPackage.Member.txt",true);
-        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(bufferedOutputStream);
-
-        objectOutputStream.writeObject(m);
-        objectOutputStream.close();
-    }
-    public static void fileOutput() throws IOException, ClassNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream("D:\\temp\\MemberPackage.Member.txt");
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-        ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
-
-        ArrayList list = (ArrayList) objectInputStream.readObject();
-
-
-        System.out.println(list.size());
-
-        objectInputStream.close();
-    }
-    public static void filePrint() throws IOException, ClassNotFoundException {
-        FileInputStream fileInputStream = new FileInputStream("D:\\temp\\MemberPackage.Member.txt");
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-        ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
-
-        ArrayList list = (ArrayList) objectInputStream.readObject();
-
-
-        setInfo p = (setInfo) list.get(0);
-        System.out.println(p.toString());
-
-        objectInputStream.close();
-
     }
 }

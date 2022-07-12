@@ -2,93 +2,92 @@ package MemberPackage;
 
 import java.io.Serializable;
 import java.sql.Connection;
-import java.util.Scanner;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class MemberInfo_Class implements Serializable {
-    private String name,address;
-    private boolean sex;
-    private int age;
+   String m_name, m_phone,m_id,m_pw;
+    public MemberInfo_Class() {
 
-    public MemberInfo_Class(String name, String address, boolean sex, int age) {
-        this.name = name;
-        this.address = address;
-        this.sex = sex;
-        this.age = age;
     }
 
-    public String getName() {
-        return name;
+
+
+    public String getM_name() {
+        return m_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setM_name(String m_name) {
+        this.m_name = m_name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getM_phone() {
+        return m_phone;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setM_phone(String m_phone) {
+        this.m_phone = m_phone;
     }
 
-    public boolean isSex() {
-        return sex;
+    public String getM_id() {
+        return m_id;
     }
 
-    public void setSex(boolean sex) {
-        this.sex = sex;
+    public void setM_id(String m_id) {
+        this.m_id = m_id;
     }
 
-    public int getAge() {
-        return age;
+    public String getM_pw() {
+        return m_pw;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setM_pw(String m_pw) {
+        this.m_pw = m_pw;
     }
 
-    @Override
-    public String toString() {
-        String temSex;
+    public void putM_name(){
+        System.out.println(m_name);
+    }
+    public void putM_id(){
+        System.out.println(m_id);
+    }
+    public void putM_phone(){
+        System.out.println(m_phone);
+    }
+    public void putM_pw(){
+        System.out.println(m_pw);
+    }
 
-        if(sex){
-            temSex = "man";
-        }else {
-            temSex = "woman";
+    void insertSQL(){
+        Connection con = null;
+        try{
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member_db","root","");
+            String str = "INSERT INTO member_t(m_name,m_phone,m_id,m_pw) VALUES (?,?,?,?)";
+            PreparedStatement p_stmt;
+            p_stmt = con.prepareStatement(str);
+
+            p_stmt.setString(1,m_name);
+            p_stmt.setString(2,m_phone);
+            p_stmt.setString(3,m_id);
+            p_stmt.setString(4,m_pw);
+
+            //서버로 SQL 명령어 전송
+            p_stmt.execute();
+
+            System.out.println("success");
+        }catch (SQLException e){
+            System.err.println("con err");
+            e.printStackTrace();
         }
 
-        return "MemberPackage.Member{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", sex=" + temSex +
-                ", age=" + age +
-                '}';
-    }
-}
-class setInfo extends MemberInfo_Class{
-    public setInfo(String name, String address, boolean sex, int age) {
-        super(name, address, sex, age);
-    }
+        try{
+            if(con != null){
+                con.close();
+            }
+        }catch (SQLException e){
 
-    public void Input(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("your name : ");
-        super.setName(input.nextLine());
-
-        System.out.println("your address : ");
-        super.setAddress(input.nextLine());
-
-        System.out.println("Are you man? : ");
-        super.setSex(Boolean.parseBoolean(input.nextLine()));
-
-        System.out.println("Your Age? : ");
-        super.setAge(Integer.parseInt(input.nextLine()));
-
-    }
-
-    class connectioon {
-        Connection con = null;
+        }
 
     }
 }
