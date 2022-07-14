@@ -10,7 +10,6 @@ public class play {
         Scanner input = new Scanner(System.in);
 
 
-
         while(true){
             //메뉴 구성
             System.out.println("menu");
@@ -26,21 +25,19 @@ public class play {
                         System.err.println("Parking area full");
                     }else{
                         System.out.println("Enter car number : ");
-                        String car_num = input.nextLine();
+                        String num = input.nextLine();
+                        if(chkCarIn(num,m)){
 
-                        for(int idx=0; idx<m.size(); idx++){
-                            if(car_num.equals(m.get(idx).getCarNum())){
-                                System.err.println("exist car");
+                            System.out.println("Enter time? : ");
+                            int time = Integer.parseInt(input.nextLine());
+
+                            if(chkTime(time)){
+                                park.carIn(num,time);
+                                m.add(park);
+                                System.out.println("Success");
                                 break;
-
                             }
-                        }
-                        System.out.println("Enter time? : ");
-                        int time = Integer.parseInt(input.nextLine());
-                        if(chkTime(time)){
-                            park.carIn(car_num,time);
-                            m.add(park);
-                        }else break;
+                        } System.err.println("error"); break;
                     }
                     break;
                 case 2:
@@ -86,4 +83,16 @@ public class play {
         }
         return true;
     }
+
+    static boolean chkCarIn(String num, ArrayList<Park> m){
+
+        for(int idx=0; idx<m.size(); idx++){
+            if(num.equals(m.get(idx).getCarNum())){
+                System.err.println("exist car");
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
