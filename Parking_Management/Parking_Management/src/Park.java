@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class Park {
+public class Park {
+
+
+
 }
