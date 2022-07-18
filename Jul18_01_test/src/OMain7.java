@@ -46,6 +46,21 @@ public class OMain7 {
             System.out.println(i);
         }
 
+        //java 1.5 이상
+        gd:for(int i =0; i<args.length;i++){
+            gd2:for(int j =0; j<args.length;j++){
+                break gd2;
+            }
+        }
+
+        for(int i=0; i<10;i++){
+            if(i==5){
+//                break;
+                continue;
+            }
+            System.out.println(i);
+        }
+
 
     }
 }
