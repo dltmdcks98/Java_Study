@@ -24,7 +24,7 @@ public class Omain {
         } else if (bmi>= 23) {
             System.out.println("Overweight");
             System.out.println("BMI :" + bmi);
-        } else if (bmi>-18.5) {
+        } else if (bmi>=18.5) {
             System.out.println("normal");
             System.out.println("BMI :" + bmi);
         }else{
