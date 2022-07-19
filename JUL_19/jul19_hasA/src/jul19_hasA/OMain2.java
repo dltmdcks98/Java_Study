@@ -9,6 +9,7 @@ public class OMain2 {
 		
 		Person p2 = new Person("김길동",20);
 		p2.Print();
+		
+		
 	}
-
 }

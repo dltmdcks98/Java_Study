@@ -16,10 +16,10 @@ public class Student {
 		this.age = age;
 	}
 	
-//	public void print() {
-//		System.out.println(name);
-//		System.out.println(age);
-//	}
+	public void print() {
+		System.out.println(name);
+		System.out.println(age);
+	}
 
 	public Student(String name, int age, Pen pen) {
 		super();
@@ -27,7 +27,7 @@ public class Student {
 		this.age = age;
 		this.pen = pen;
 	}
-	public void print() {
+	public void println() {
 		System.out.println(name);
 		System.out.println(age);
 		pen.print();
