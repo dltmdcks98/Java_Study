@@ -1,20 +1,19 @@
+package com.lsc.jul20am.pen;
 
-public class Item {
+public class Pen {
 	String name;
 	int price;
 	
-	public Item() {
+	public Pen() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public Item(String name, int price) {
+
+	public Pen(String name, int price) {
 		super();
 		this.name = name;
 		this.price = price;
 	}
-
-
+	
 	public void print() {
 		System.out.println(name);
 		System.out.println(price);

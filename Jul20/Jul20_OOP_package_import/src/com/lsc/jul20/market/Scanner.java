@@ -1,3 +1,4 @@
+package com.lsc.jul20.market;
 
 public class Scanner extends Item {
 	int weight;
