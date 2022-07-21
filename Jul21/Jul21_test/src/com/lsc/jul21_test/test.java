@@ -30,12 +30,23 @@ public class test {
 		System.out.println("내가 낸거 : "+list[i-1]);
 	
 		//3-1 ->v 2-1 1,3->l 2-3 -v
-		int chk = ran-i;
+//		int chk = ran-i;
+//		if(i==ran) {
+//			System.out.println("비겼습니다.");
+//		}else if(chk==1 || chk==-2) {
+//			System.out.println("졌습니다.");
+//		}else if(chk==2 || chk==-1) {
+//			System.out.println("이겼습니다.");
+//		}
+//		
+//		
+		
+		int chk = ran%i;
 		if(i==ran) {
 			System.out.println("비겼습니다.");
-		}else if(chk==1 || chk==-2) {
+		}else if() {
 			System.out.println("졌습니다.");
-		}else if(chk==2 || chk==-1) {
+		}else  {
 			System.out.println("이겼습니다.");
 		}
 
