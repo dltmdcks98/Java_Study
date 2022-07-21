@@ -40,7 +40,7 @@ public class Test1 {
 		while(true) {
 			if(chkran()) {
 				break;
-			}else continue;
+			}
 		}
 		
 	}
@@ -73,7 +73,7 @@ public class Test1 {
 	static void jude(int hund,int ten, int one) {
 		strike=0;
 		ball=0;
-			if(ran[0]==hund) {
+			if(ran[0]==hund) {                                                                                         
 				strike+=1;	
 			}else if(ran[0]==ten | ran[0]==one) {
 				ball+=1;
