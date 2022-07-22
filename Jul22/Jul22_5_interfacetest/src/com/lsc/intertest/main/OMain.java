@@ -9,5 +9,5 @@ public class OMain {
 		temp t= new temp();
 		t.print();
 	}
-
+asdfasdfasdf
 }

@@ -6,7 +6,7 @@ public class temp implements test{
 
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubasdfasdfa
 		System.out.println("출력");
 	}
 
