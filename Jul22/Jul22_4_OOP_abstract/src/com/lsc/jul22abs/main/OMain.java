@@ -3,6 +3,7 @@ package com.lsc.jul22abs.main;
 import com.lsc.jul22abs.avengers.Avengers;
 import com.lsc.jul22abs.avengers.Hulk;
 import com.lsc.jul22abs.avengers.IronMan;
+import com.lsc.jul22abs.human.Human;
 
 public class OMain {
 
@@ -29,4 +30,7 @@ public class OMain {
 		a.attack();
 	}
 
+	
+		Human h = new Human("홍길동", 30);
+		System.out.println(h.toString());
 }

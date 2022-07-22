@@ -1,6 +1,8 @@
 package com.lsc.jul22abs.avengers;
 
-public class IronMan extends Avengers {
+import com.lsc.jul22abs.smoker.Smoker;
+
+public class IronMan extends Avengers implements Smoker {
 	private String computer;
 	
 	public IronMan() {
@@ -32,6 +34,12 @@ public class IronMan extends Avengers {
 		// TODO Auto-generated method stub
 		super.print();
 		System.out.println(computer);
+	}
+
+	@Override
+	public void d() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

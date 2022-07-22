@@ -1,7 +1,9 @@
 package com.lsc.jul22abs.avengers;
 
+import com.lsc.jul22abs.smoker.Smoker;
+
 //아이언맨, 헐크 같은 애들이 만든 조직 -> 추상적인 개념 
-public abstract class Avengers {
+public abstract class Avengers{
 	private String name;
 	private int age;
 	private String type;
