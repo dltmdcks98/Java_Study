@@ -24,7 +24,7 @@ public class OMain {
 		System.out.print("페달 수 : ");
 		foot = input.nextInt();
 		
-		dis = r*(Math.round(br/fr))*foot;
+		dis = r*(Math.round(br/fr))*foot; 
 		System.out.println(dis+"cm");
 		
 		
