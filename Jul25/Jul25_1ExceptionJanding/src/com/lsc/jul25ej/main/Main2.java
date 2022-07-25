@@ -34,5 +34,12 @@ public class Main2 {
 		//기본형 -> String 
 		String dd = d+"";
 		String ddd = String.format("%d", d);
+		
+		String f = "123";
+//		Integer f2 = Integer.parseInt(f);
+//		int f3 = f2.intValue(); 아래와 같음 
+		int f3 = Integer.parseInt(f);
+		System.out.println(f3);
+		
 	}
 }
